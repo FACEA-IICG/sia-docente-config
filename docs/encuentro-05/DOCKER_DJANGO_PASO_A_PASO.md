@@ -10,15 +10,26 @@
 
 ## 1. Preparar Docker
 
-En un computador personal con Windows, instale Docker Desktop siguiendo la documentación oficial y use el backend WSL 2. En un computador institucional o compartido, no instale ni cambie WSL, virtualización o permisos sin autorización docente.
+En un computador institucional o compartido, no instale ni cambie WSL, virtualización o permisos sin autorización docente. Si Docker Desktop ya está instalado, continúe con la verificación.
+
+En un computador personal con Windows:
+
+1. Compruebe en PowerShell que WSL está disponible: `wsl --version`.
+2. Revise los requisitos y descargue Docker Desktop desde <https://docs.docker.com/desktop/setup/install/windows-install/>.
+3. Ejecute el instalador y mantenga seleccionada la opción de WSL 2 cuando aparezca.
+4. Reinicie el equipo si el instalador lo solicita.
+5. Abra Docker Desktop y espere hasta que el motor indique que está en ejecución. Para esta práctica local no es necesario iniciar sesión en Docker Hub.
 
 Verifique en PowerShell o Git Bash:
 
 ```bash
+wsl --version
 docker --version
 docker compose version
 docker run --rm hello-world
 ```
+
+Si `wsl --version` o `hello-world` falla, no continúe repitiendo comandos: registre el mensaje y solicite apoyo docente.
 
 ## 2. Clonar el repositorio docente
 
