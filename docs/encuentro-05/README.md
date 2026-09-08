@@ -7,8 +7,6 @@ Este material tiene dos propósitos:
 
 ## Productos del encuentro
 
-- `docs/requisitos/canvas-alcance-v1.md`
-- `docs/requisitos/mapa-actores-v1.md`
 - `docs/requisitos/entrevista-simulada-equipo-X.md`
 - evidencia de `docker compose ps` y de `http://localhost:8000/health/`
 
