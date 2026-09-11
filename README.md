@@ -16,6 +16,7 @@ powershell -ExecutionPolicy Bypass -File scripts/bootstrap.ps1
 docker compose -f docker/docker-compose.yml up -d --build
 docker compose -f docker/docker-compose.yml exec web python manage.py migrate
 docker compose -f docker/docker-compose.yml exec web python manage.py check
+docker compose -f docker/docker-compose.yml ps
 ```
 
 Git Bash, macOS o Linux:
@@ -25,17 +26,20 @@ sh scripts/bootstrap.sh
 docker compose -f docker/docker-compose.yml up -d --build
 docker compose -f docker/docker-compose.yml exec web python manage.py migrate
 docker compose -f docker/docker-compose.yml exec web python manage.py check
+docker compose -f docker/docker-compose.yml ps
 ```
 
-Abra `http://localhost:8000/` y `http://localhost:8000/health/`.
+Abra `http://localhost:8000/` y `http://localhost:8000/health/`. Los servicios `web` y `db` deben aparecer como `healthy`.
 
 ## Material del Encuentro 5
 
-Consulte `docs/encuentro-05/` para utilizar el simulador de entrevista, la guía de preguntas, la plantilla de registro y el procedimiento Docker–Django.
+- [Práctica técnica guiada y detallada](docs/encuentro-05/PRACTICA_TECNICA_GUIADA.md)
+- [Procedimiento breve Docker–Django](docs/encuentro-05/DOCKER_DJANGO_PASO_A_PASO.md)
+- [Simulador, guía de preguntas y plantilla de registro](docs/encuentro-05/README.md)
 
 ## Regla de seguridad
 
-Nunca publique `.env`, contraseñas, tokens, claves privadas ni datos reales. Use `.env.example` como plantilla. Antes de cualquier commit ejecute `git status --short` y compruebe que `.env` no aparezca.
+Nunca publique `.env`, contraseñas, tokens, claves privadas ni datos reales. Use `.env.example` como plantilla. `.dockerignore` impide que `.env` y archivos locales entren en la imagen. Antes de cualquier commit ejecute `git status --short` y compruebe que `.env` no aparezca.
 
 ## Estructura principal
 
@@ -47,6 +51,7 @@ docs/config/
 docs/encuentro-05/
 manage.py
 .env.example
+.dockerignore
 requirements.txt
 ```
 
