@@ -1,4 +1,5 @@
 .git
+.gitignore
 .env
 .venv
 venv
@@ -9,5 +10,6 @@ __pycache__
 htmlcov
 db.sqlite3
 staticfiles
+.DS_Store
 .idea
 .vscode
